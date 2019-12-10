@@ -8,6 +8,10 @@
 
 [http://krasimir.github.io/gifffer](http://krasimir.github.io/gifffer)
 
+## About this Fork
+
+This forked repository provides a native implementation of the Gifffer method that *automatically converts every .gif on the page* to a playable version.
+
 ## Usage
 
 Include `gifffer.min.js` in your page.
@@ -16,10 +20,10 @@ Include `gifffer.min.js` in your page.
 <script type="text/javascript" src="gifffer.min.js"></script>
 ```
 
-Instead of setting `src` attribute on your image use `data-gifffer`.
+Any image with an `src` attribute on the page with a `.gif` file type will be converted.
 
 ```html
-<img data-gifffer="image.gif" />
+<img src="image.gif" />
 ```
 
 At the end, call `Gifffer();` so you replace the normal gifs with playable gifs. For example:
@@ -30,10 +34,10 @@ window.onload = function() {
 }
 ```
 
-For accessibility reasons, instead of setting `alt` attribute on your image, you may use `data-gifffer-alt` (optional).
+For accessibility reasons, any `alt` attribute on your image will be converted into a hidden alt-text paragraph (optional).
 
 ```html
-<img data-gifffer="image.gif" data-gifffer-alt="some alt description"/>
+<img src="image.gif" alt="some alt description"/>
 ```
 
 The Gifffer function returns an array of nodes that could be used to simulate clicks. For Example:
@@ -51,7 +55,7 @@ window.onload = function() {
 Gifffer will show the controls immediately if you set `data-gifffer-width` and `data-gifffer-height` even if the image is not fully loaded.
 
 ```html
-<img data-gifffer="image.gif" data-gifffer-width="250" data-gifffer-height="237" />
+<img src="image.gif" data-gifffer-width="250" data-gifffer-height="237" />
 ```
 
 *(`data-gifffer-width` accepts percentages value)*
@@ -61,7 +65,7 @@ Have in mind that the library keeps the value of the `class` and `id` attributes
 If you want to stop the Gif and reset it to its original position afetr a given time interval use `data-gifffer-duration` (in milliseconds).
 
 ```
-<img data-gifffer="image.gif" data-gifffer-duration="4000" data-gifffer-width="250" data-gifffer-height="237" />
+<img ="image.gif" data-gifffer-duration="4000" data-gifffer-width="250" data-gifffer-height="237" />
 ```
 
 ### Module Loading (Webpack or Angular ect)
